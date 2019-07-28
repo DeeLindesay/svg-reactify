@@ -1,5 +1,5 @@
 {
-    "name"            : "svg-reactify",
+    "name"            : "svg-reactify-2",
     "description"     : "transform SVG files into React elements",
     "homepage"        : "https://github.com/coma/svg-reactify",
     "repository"      : {
