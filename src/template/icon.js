@@ -7,8 +7,8 @@ export default function SVG${name}Icon (props: any) {
     return React.createElement('span', props, SVG);
 };
 
-SVGComponent.displayName = 'svg-${name}',
-SVGComponent.defaultProps = {
+SVG${name}Icon.displayName = 'svg-${name}',
+SVG${name}Icon.defaultProps = {
     className: 'icon icon-${name}'
 };
 `;

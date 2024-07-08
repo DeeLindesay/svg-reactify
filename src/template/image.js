@@ -7,5 +7,5 @@ export default function SVG${name}Icon (props: any) {
     return SVG;
 }
 
-SVGComponent.displayName = 'svg-${name}';
+SVG${name}Icon.displayName = 'svg-${name}';
 `;
