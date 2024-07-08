@@ -1,6 +1,6 @@
 export default (name, svg) => `import React from 'react';
 
-const SVG = ${svg}
+const SVG = ${svg};
 
 export default function SVG${name}Icon (props: any) {
 
@@ -10,5 +10,5 @@ export default function SVG${name}Icon (props: any) {
 SVGComponent.displayName = 'svg-${name}',
 SVGComponent.defaultProps = {
     className: 'icon icon-${name}'
-}
+};
 `;
