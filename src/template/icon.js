@@ -1,13 +1,15 @@
-export default (name, svg) => `var React = require('react'), SVG = ${ svg }
+export default (name, svg) => `import React from 'react';
 
-function SVGComponent (props) {
+const SVG = ${svg}
+
+function SVGComponent (props: any) {
 
     return React.createElement('span', props, SVG);
 };
 
-SVGComponent.displayName = 'svg-${ name }',
+SVGComponent.displayName = 'svg-${name}',
 SVGComponent.defaultProps = {
-    className: 'icon icon-${ name }'
+    className: 'icon icon-${name}'
 }
 
-module.exports = SVGComponent;`
+module.exports = SVGComponent;`;

@@ -1,10 +1,12 @@
-export default (name, svg) => `var React = require('react'), SVG = ${ svg }
+export default (name, svg) => `Import React from 'react';
 
-function SVGComponent(props) {
+const SVG = ${svg}
+
+function SVGComponent(props: any) {
 
     return SVG;
 }
 
-SVGComponent.displayName = 'svg-${ name }';
+SVGComponent.displayName = 'svg-${name}';
 
 module.exports = SVGComponent`;

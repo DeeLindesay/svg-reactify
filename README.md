@@ -1,5 +1,4 @@
-svg-reactify
-============
+# svg-reactify-ts
 
 [![Build Status](https://travis-ci.org/coma/svg-reactify.png?branch=v2.x)](https://travis-ci.org/coma/svg-reactify?branch=v2.x)
 [![Dependency Status](https://david-dm.org/coma/svg-reactify/2.0.0.png)](http://david-dm.org/coma/svg-reactify/2.0.0)
@@ -7,29 +6,27 @@ svg-reactify
 
 Transform SVG files into React elements.
 
-Configuration
--------------
+This is based on svg-reactify but generates a file that can be give a typescript extension
+
+## Configuration
 
 As with most browserify transforms, you can configure it via the second argument to `bundle.transform`:
 
 ```js
-bundle.transform(require('svg-reactify'), { default: 'image' });
+bundle.transform(require("svg-reactify"), { default: "image" });
 ```
 
 or inside your `package.json` configuration:
 
 ```json
 {
-    "browserify": {
-        "transform": [
-            ["svg-reactify", { "default": "image" }]
-        ]
-    }
+  "browserify": {
+    "transform": [["svg-reactify", { "default": "image" }]]
+  }
 }
 ```
 
-Requiring SVG files
--------------------
+## Requiring SVG files
 
 Now you can do things like...
 
@@ -61,8 +58,7 @@ module.exports = React.createClass({
 });
 ```
 
-Templates
----------
+## Templates
 
 svg-reactify uses templates to produce the react components. Currently there are two templates available - `image` and `icon`. Maybe there will be more in the future, like one for symbols for example.
 
@@ -70,11 +66,9 @@ Choose the default template using the `default` option. You can also set a regex
 
 ```json
 {
-    "browserify": {
-        "transform": [
-            ["svg-reactify", { "default": "image", "icon": "\.icon" }]
-        ]
-    }
+  "browserify": {
+    "transform": [["svg-reactify", { "default": "image", "icon": ".icon" }]]
+  }
 }
 ```
 
@@ -86,21 +80,21 @@ This template will produce a DOM tree looking like:
 
 ```html
 <span class="icon icon-__FILENAME_IN_KEBABCASE__">
-   <svg .... />
+  <svg .... />
 </span>
 ```
 
 The `<span>` element will also inherit any props given to the element, for example the following react element:
 
 ```html
-<SVG.Dog className="customClass" something="else"/>
+<SVG.Dog className="customClass" something="else" />
 ```
 
 ... will override the default class and produce:
 
 ```html
 <span class="customClass" something="else">
-   <svg .... />
+  <svg .... />
 </span>
 ```
 
